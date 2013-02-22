@@ -1,0 +1,89 @@
+Ngahuru - GTK+ based simple text editor
+
+
+Description
+===========
+
+Ngahuru is a simple GTK+ text editor written with the intention to be another interpretation of a distraction-free text editor.
+Most parts of its code are based on leafpad source code, version 0.8.17.
+Ngahuru is Maori for "autumn" - which is reminiscent of the "leaf" in "leafpad".
+It differs from leafpad in syntax highlighting and the invitation to quickly hide the menu bar with Ctrl-m.
+When it's hidden, you can't do anything in Ngahuru EXCEPT type, which is exactly what you might want to do.
+
+
+Features
+========
+
+  * Absence of features
+  * Syntax highlighting
+  * Codeset option (Some OpenI18N registered)
+  * Auto codeset detection (UTF-8 and some codesets)
+  * Unlimitted Undo/Redo
+  * Auto/Multi-line Indent
+  * Display line numbers
+  * Drag and Drop
+  * Printing
+
+
+Installation
+============
+
+Ngahuru requires:
+  * GTK+-2.x.x libraries.
+  * GTKSOURCEVIEW2.0 libraries.
+Printing (optional) requires libgnomeprintui-2.2.
+
+Simple install procedure:
+
+  $ tar xzvf ngahuru-x.x.tar.gz       # unpack the sources
+  $ cd ngahuru-x.x                   # change to the toplevel directory
+  $ ./configure                         # run the `configure' script
+  $ make                                # build Ngahuru
+  [ Become root if necessary ]
+  # make install-strip                  # install Ngahuru
+
+See the file 'INSTALL' for more detailed information.
+
+
+Keybindings
+===========
+Ctrl-m toggles menu bar visibility.
+When the menu bar is visible, all well-known key combinations of leafpad are available.
+These are:
+Ctrl-N                          New
+Ctrl-O                          Open
+Ctrl-S                          Save
+Shift-Ctrl-S                    Save As
+Ctrl-W                          Close
+Ctrl-P                          Print
+Ctrl-Q                          Quit
+Ctrl-Z                          Undo
+Shift-Ctrl-Z (Ctrl-Y)           Redo
+Ctrl-X                          Cut
+Ctrl-C                          Copy
+Ctrl-V                          Paste
+Ctrl-A                          Select All
+Ctrl-F                          Find
+Ctrl-G (F3)                     Find Next
+Shift-Ctrl-G (Shift-F3)         Find Previous
+Ctrl-H (Ctrl-R)                 Replace
+Ctrl-J                          Jump To
+Ctrl-T                          Always on Top
+Ctrl-Tab                        toggle tab width
+Tab with selection bound        multi-line indent
+Shift-Tab with selection bound  multi-line unindent
+
+License
+=======
+
+This program is released under the GNU General Public License (GPL) version 2,
+see the file 'COPYING' for more information.
+
+
+Disclaimer
+==========
+
+Any distributed file is likely to be in large parts a copy of an analogous file of leafpad 0.8.17.
+Any file that differs from the corresponding leafpad file in more regards than the replacement "leafpad" -> "ngahuru", has the additional copyright notice
+"Copyright (C) 2013 Mathias Fuchs"
+in the header, in a believe to accomplish the requirement of the GPL2, paragraph 2.a.
