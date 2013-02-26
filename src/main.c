@@ -278,7 +278,7 @@ static void parse_args(gint argc, gchar **argv, FileInfo *fi)
 }
 
 gint toggle_menu_bar_visibility (GtkWidget *widget, GdkEventKey *event) {
-  if (event -> keyval == GDK_m && event -> state == GDK_CONTROL_MASK)
+  if (event -> keyval == GDK_m && (event -> state & GDK_CONTROL_MASK))
     gtk_widget_set_visible(GTK_WIDGET(pub -> mw -> menubar), !gtk_widget_get_visible(GTK_WIDGET(pub -> mw -> menubar)));
   return 0;
 }
