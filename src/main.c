@@ -277,12 +277,6 @@ static void parse_args(gint argc, gchar **argv, FileInfo *fi)
 #endif
 }
 
-gint toggle_menu_bar_visibility (GtkWidget *widget, GdkEventKey *event) {
-  if (event -> keyval == GDK_m && (event -> state & GDK_CONTROL_MASK))
-    gtk_widget_set_visible(GTK_WIDGET(pub -> mw -> menubar), !gtk_widget_get_visible(GTK_WIDGET(pub -> mw -> menubar)));
-  return 0;
-}
-
 
 gint main(gint argc, gchar **argv)
 {
@@ -388,10 +382,8 @@ gint main(gint argc, gchar **argv)
 	
 	set_main_window_title();
 
-
 	gtk_window_fullscreen(GTK_WINDOW(pub -> mw -> window));
 	gtk_container_set_border_width(GTK_CONTAINER(pub -> mw -> window), 152);
-	g_signal_connect (G_OBJECT (pub -> mw -> window), "key_press_event", G_CALLBACK (toggle_menu_bar_visibility), NULL);
 
 	gtk_source_buffer_set_highlight_syntax(pub->mw->buffer, TRUE);
 	gtk_main();
