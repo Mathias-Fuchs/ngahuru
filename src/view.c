@@ -108,6 +108,12 @@ static gboolean check_selection_bound(GtkTextBuffer *buffer)
   return FALSE;
 }
 
+static void toggle_menu_bar_visibility (void)
+{
+  gtk_widget_set_visible(GTK_WIDGET(pub -> mw -> menubar), !gtk_widget_get_visible(GTK_WIDGET(pub -> mw -> menubar)));
+  return;
+}
+
 static gboolean cb_key_press_event(GtkWidget *view, GdkEventKey *event)
 {
   GtkTextBuffer *buffer;
@@ -191,7 +197,7 @@ static gboolean cb_key_press_event(GtkWidget *view, GdkEventKey *event)
     return TRUE;
   case GDK_m:
     if (event->state & GDK_CONTROL_MASK) {
-      gtk_widget_set_visible(GTK_WIDGET(pub -> mw -> menubar), !gtk_widget_get_visible(GTK_WIDGET(pub -> mw -> menubar)));
+      toggle_menu_bar_visibility();
       return TRUE;
     }
     break;
